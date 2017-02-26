@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" rel="stylesheet" src="jquery-1.12.2.js"></script> 
+  <style type="text/css">
+   div{
+    -webkit-text-size-adjust:none;
+   }
+  </style>
+</head>
+<body>
+ <div id="con1">mbjmbj</div>
+ <div id="con2"><p>ccc</p><!--hengheng--></div>
+ <div class="con2" data-name="mbj" data-age="12">wmy</div>
+ <p class="con2" data-gener="man">mbhahha</p>
+ <p>mbjwmymbj</p>
+ <div style="width:200px;height:400px;border:1px solid red;" class="box">
+  <div style="width:100px;height:200px;border:1px solid blue;margin:5px;" class="son1">123234454556</div>
+  <p style="border:1px solid yellow;" class="son2">mbjbmbjbmbj</p>
+ </div>
+ <div style="width:200px;height:400px;border:1px solid red;" class="box1">
+  <div style="width:100px;height:200px;border:1px solid blue;margin:5px;" class="son11">
+   <!-- <p style="border:1px solid yellow;margin:5px;" class="son22">sdfvdf</p> -->
+   <input type="text" name="" class="son22" style="width:70px;height:20px;margin:5px;">
+   <!-- <a href="www.w3.org">click me</a> -->
+   <!-- <div style="width:70px;height:20px;margin:5px;border:1px solid red;" class="son22">bs</div> -->
+  </div>
+ </div>
+<!--  <div class="cdiv">
+  <form class="cform">
+   <input type="text" name="username" class="username" name1="mbj">
+   <input type="submit" name="" value="submit">
+  </form>
+ </div> -->
+ <script type="text/javascript">
+ function show(str){
+  console.log(str);
+ }
+ $("#con1").on("click",function(){
+  $("input").replaceWith($("p"));
+ });
+ // show($("div").text()); //不遵循genOnesetAll原则，获取了所有div元素的innerText，而不是第一个div的内容
+ // show($("div").html()); //这里就只获取了第一个div的innerHTML
+ // $("#con1").on("click",function(){
+ //  var s=$("script")[1];
+ //  $("#con1").append(s);
+ //  });
+ // $("#con1").append($("#con2"));
+ // var str=jQuery.find.attr($(".username")[0],"name1");
+ // show(str);
+ // show(jQuery.expando);   //jQuery1122009670629469345582
+ // $(".cdiv").on("mbj",function(){
+ //  show("cdiv mbj");
+ // });
+ // $(".cdiv").trigger("mbj");
+ // $(".cdiv").on("submit","form",function(e){
+ //  show("cform submit");
+ //  // e.preventDefault();
+ // });
+ // $(document).on("submit",function(){
+ //  show("document submit");
+ // });
+ // $("form").trigger("submit");
+ // var str="";
+ // for(var key in jQuery.cache){
+ //   str+=key+":"+jQuery.cache[key]+"      ";
+ // }
+ // console.log(str);
+ // $("form").trigger("submit");
+ 
+//  $(".box1").on("focus",function(){
+//   show("box1 focus");
+// });
+// $(".son22").on("focus",function(){
+//   show("son22 focus");
+// });
+// $(".son11").on("focus",function(){
+//   show("son11 focus");
+// });
+// console.log(jQuery.cache);
+// $(".son22").trigger("focus");  //这里只会执行son22 focus
+// document.getElementsByClassName("son22")[0].focus();触发了focus事件
+
+// $(".box1").on("click",function(){
+//   show("box1 click");
+// });
+//  $(".box1").on("focus",function(){
+//   show("box1 focus");
+// });
+//  $(".box1").on("focus",".son22",function(){   //jQuery在处理的时候把对.son22的focus代理变成了focusin
+//   show("son22 focus");
+// });
+//   $(".box1").on("focus",".son11",function(){   //jQuery在处理的时候把对.son11的focus代理变成了focusin
+//   show("son11 focus");
+// });
+//   console.log(jQuery.cache);
+
+//   $(document).on("focus",".box1",function(){
+//     show(".box1 focus");
+//   });
+// $(".son22").on("focus",function(){
+//   show("son22 focus");
+// });
+// $(".son11").on("focus",function(){
+//   show("son11 focus");
+// });
+// console.log(jQuery.cache);
+// $(".son22").trigger("focus");
+
+ // $(".box1").on("click",function(){
+ //  show("box1 click");
+ // });
+ // $(".box1").on("click",".son11",function(){
+ //  show("son11 click");
+ // });
+ // $(".box1").on("click",".son22",function(e){
+ //  show("son22 click");
+ //  // e.preventDefault();
+ //  // console.log(e);
+ // });
+ // $(".son22").trigger("click");
+ // document.getElementsByTagName("a")[0].addEventListener("click",function(){
+ //  show("addEventListener click");
+ // });
+// $(".box1 a").trigger("click");
+ 
+//  var box1=$(".box1");
+//  box1.on("mouseover",function(){
+//   show("box1 mouseover");
+//  });
+//  box1.on("click",".son22",function(){
+//   show("son22 click");
+//  });
+//  var son22=$(".son22");
+//  son22.on("mouseenter",function(){
+//   show("son22 mouseenter");
+//   console.log(jQuery.cache);
+//   son22.off("click");
+//   console.log(jQuery.cache);
+//  });
+// son22.on("click",function(){
+//   show("son22 click original");
+// });
+//   var son11=$(".son11");
+//  son11.on("mouseover",function(){
+//   show("son11 mouseover");
+//  });
+ // son22.trigger("mouseenter");
+ // var box1=$(".box1");
+ // box1.on("focusin",function(){
+ //  show("box1 focus");
+ // });
+ // var son22=$(".son22");
+ // son22.on("focus",function(){
+ //  show("son22 focus");
+ // });
+ // son22.on("focusin",function(){
+ //  show("son22 focusin");
+ // });
+ // var son11=$(".son11");
+ // son11.on("focus",function(){
+ //  show("son11 focus");
+ // });
+ 
+ // document.getElementsByClassName("box1")[0].addEventListener("focus",function(){
+ //  show("box1 focus");
+ // });
+ // document.getElementsByClassName("son11")[0].addEventListener("focus",function(){
+ //  show("son11 focus");
+ // }); 
+ // document.getElementsByClassName("son22")[0].addEventListener("focus",function(){
+ //  show("son22 focus");
+ // });
+ 
+ // var box1=$(".box1");
+ // box1.on("focus","input",function(){
+ //  show("son22 focus");//当input获得焦点的时候，同时触发focus和focusin事件，focusin事件冒泡向上传递到祖先
+ // });
+ // box1.on("focus","div",function(){
+ //  show("son11 focus");
+ // });
+ //  box1.on("focus",function(){
+ //  show("box1 focus");
+ // });
+ //  console.log(jQuery.cache);
+
+ // var box=$(".box");
+ // box.on("mouseenter",function(){
+ //  show("box mouseenter");
+ // });
+ // box.on("mouseleave",function(){
+ //  show("box mouseleave");
+ // });
+ // box.on("mouseenter","div",function(){
+ //  show("son1 mouseenter");
+ // });
+ // box.on("mouseleave","div",function(){
+ //  show("son1 mouseleave");
+ // });
+ // box.on("mouseenter","p",function(){
+ //  show("son2 mouseenter");
+ // });
+ // box.on("mouseleave","p",function(){
+ //  show("son2 mouseleave");
+ // });
+ 
+  // var box=$(".box");
+  // box.on("mouseenter",function(){
+  //   show("box mouseenter");
+  // });
+  // box.on("mouseleave",function(){
+  //   show("box mouseleave");
+  // });
+  // var son1=$(".son1");
+  // son1.on("mouseenter",function(){
+  //   show("son1 mouseenter");
+  // });
+  // son1.on("mouseleave",function(){
+  //   show("son1 mouseleave");
+  // });
+  // var son2=$(".son2");
+  // son2.on("mouseenter",function(){
+  //   show("son1 mouseenter");
+  // });
+  // son2.on("mouseleave",function(){
+  //   show("son1 mouseleave");
+  // });
+
+//  var d1 = $.Deferred();
+// var d2 = $.Deferred();
+// var d3 = $.Deferred();
+ 
+// $.when( d1, d2, d3 ).done(function ( v1, v2, v3 ) {
+//     console.log( v1 ); // v1 is undefined
+//     console.log( v2 ); // v2 is "abc"
+//     console.log( v3 ); // v3 is an array [ 1, 2, 3, 4, 5 ]
+// });
+ 
+// d1.resolve();
+// d2.resolve( "abc" );
+// d3.resolve( 1, 2, 3, 4, 5 );
+// d1.resolve("mbj");
+  // var jq=jQuery("#con1").data();
+  // var jq=jQuery.readyWait;
+  // $(document).ready(function(){
+  //   //
+  //   var jq=jQuery.readyWait;
+  //   console.log(jq);
+  // });
+  // $(document).ready(function(){
+  //   //
+  //   var jq=jQuery.readyWait;
+  //   console.log(jq);
+  // });
+  // var deferred=jQuery.Deferred();
+  // deferred.done(function(data){
+  //   console.log("I am done "+data+Math.random());
+  // }).fail(function(data){
+  //   console.log("I an fail "+data);
+  // }).progress(function(data){
+  //   console.log("I an progress"+data);
+  // });
+  // deferred.notify(Math.random()*100+"%");
+  // deferred.notify(Math.random()*100+"%");
+  // deferred.done(function(data){
+  //   console.log("I an second done "+data);
+  // });
+  // var jq=jQuery("#con2").contents();
+  //var jq=$("p").parent();   //所有p元素的父元素
+  // var jq=jQuery.filter(".con2",jQuery("div"));
+  // var jq=jQuery(document);
+  // var jq=jQuery(document.getElementsByClassName("con2"));
+  // var jq=jQuery(".con2");
+  // console.log(jq);
+  // var jq=jQuery("div[class=con2]:nth-child(2)");//:contains('mb');:nth-child(1);[class=con2]
+  // console.log(typeof jq);
+  // var jq=jQuery("p").filter(".con2:contains('mb')");
+  // console.log(jq);
+  /*function A(name){
+     this.name=name;
+  }
+  function B(age){
+  	this.age=age;
+  }
+  B.prototype=new A("mbj");
+  var b=new B(18);
+  alert(jQuery.isPlainObject(b)+"   mbj");
+  alert(jQuery.isPlainObject([]));*/
+  // var str="";
+  // var obj=jQuery("#con1");
+  // for(var key in obj){
+  // 	str+=key+":"+obj[key]+"\n";
+  // }
+  // alert(str);  //这里不一定显示jQuery对象的所有的属性，因为有些属性可能是不可枚举的，
+  // //比如数组的length属性就是不可枚举的,可以用propertyIsEnumerable来判断
+  // var jq=jQuery("div");
+  // console.log(jq);
+  //console.log(jq.pushStack(jq.toArray()));
+  // var jq=jQuery("*");
+  // console.log(jq);
+  // var jq=jQuery("div:contains('mbj')");元素文本中含有mbj字样的元素
+  // console.log(jq);
+ </script>
+</body>
+</html>
